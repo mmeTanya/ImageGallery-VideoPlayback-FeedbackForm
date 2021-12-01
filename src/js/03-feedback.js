@@ -7,16 +7,16 @@ const message = document.querySelector('.feedback-form textarea');
 form.addEventListener('input', throttle(onTextareaInput, 500));
 form.addEventListener('submit', onFormSubmit);
 
-const formData = {};
+let formData = {};
 controlAutoFillingForm();
 
 function onTextareaInput(e) {
-  const formData = {
+  formData = {
     email: email.value,
     message: message.value,
   };
   localStorage.setItem('feedback - form - state', JSON.stringify(formData));
-return formData
+  return formData;
 }
 
 function controlAutoFillingForm() {
@@ -32,7 +32,7 @@ function controlAutoFillingForm() {
 function onFormSubmit(e) {
   e.preventDefault();
 
-   console.log(formData);
+  console.log(formData);
   e.currentTarget.reset();
   localStorage.removeItem('feedback - form - state');
 }
