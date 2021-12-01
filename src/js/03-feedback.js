@@ -31,7 +31,6 @@ function controlAutoFillingForm() {
 
 function onFormSubmit(e) {
   e.preventDefault();
-
   console.log(formData);
   e.currentTarget.reset();
   localStorage.removeItem('feedback - form - state');
