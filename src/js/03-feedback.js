@@ -16,7 +16,7 @@ function onTextareaInput(e) {
     message: message.value,
   };
   localStorage.setItem('feedback - form - state', JSON.stringify(formData));
-  return formData;
+return formData
 }
 
 function controlAutoFillingForm() {
@@ -28,10 +28,11 @@ function controlAutoFillingForm() {
     message.value = returnData.message;
   }
 }
+
 function onFormSubmit(e) {
   e.preventDefault();
 
-  console.log(formData);
+   console.log(formData);
   e.currentTarget.reset();
   localStorage.removeItem('feedback - form - state');
 }
